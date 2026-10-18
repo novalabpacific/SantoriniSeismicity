@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.png binary
+
+# Preserve the exact bytes of scientific data and results.
+/data/catalog.txt -text
+/data/Santorini_catalog.csv -text
+/maps/* -text
+/outputs/results.json -text
+/outputs/manuscript_values.csv -text

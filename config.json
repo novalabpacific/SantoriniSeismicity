@@ -1,0 +1,140 @@
+{
+  "label": "Santorini-Amorgos seismicity catalogs",
+  "out_dir": "generated",
+  "origin": {
+    "lat0": 36.605514,
+    "lon0": 25.64609
+  },
+  "window": [
+    "2025-01-27T19:00:00",
+    "2025-03-04T23:59:59"
+  ],
+  "primary_filter": "Q1",
+  "block_len": 5,
+  "equivalence_bound_deg": 15,
+  "match_tol_s": 1.0,
+  "early_axis_days": 14,
+  "strat_days": 7,
+  "harmonized_errZ": [
+    3.0,
+    1.5,
+    1.0
+  ],
+  "dbscan_eps": [
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.5
+  ],
+  "dbscan_min_samples": [
+    20,
+    30,
+    40,
+    50
+  ],
+  "n_boot": {
+    "simple": 1000,
+    "cluster": 1000,
+    "perm": 10000,
+    "error_mc": 300
+  },
+  "map_bbox": [
+    25.15,
+    26.1,
+    36.3,
+    36.85
+  ],
+  "maps": {
+    "coast": "maps/Santorini_NE_2025.xy",
+    "faults": "maps/NOAFaults_v6.0.xy",
+    "dike_traces": "maps/lomax2025_source_traces.xy",
+    "kolumbo": true,
+    "bathy": "maps/ne10m_bathy_contours.xy"
+  },
+  "catalogs": {
+    "SantoriniE": {
+      "path": "data/santorini_e_catalog.csv",
+      "cols": {
+        "time_parts": {
+          "year": "yr",
+          "month": "mon",
+          "day": "day",
+          "hour": "hr",
+          "minute": "mn",
+          "second": "sec"
+        },
+        "lat": "lat",
+        "lon": "lon",
+        "dep": "dep",
+        "mag": "mag",
+        "errH": "eh",
+        "errZ": "ez"
+      }
+    },
+    "NLL": {
+      "path": "data/Santorini_catalog.csv",
+      "cols": {
+        "time_parts": {
+          "year": "year",
+          "month": "month",
+          "day": "day",
+          "hour": "hour",
+          "minute": "minute",
+          "second": "seconds"
+        },
+        "lat": "latitude",
+        "lon": "longitude",
+        "dep": "depth",
+        "mag": "magnitude",
+        "errH": "ErrH",
+        "errZ": "Errz",
+        "rms": "RMS",
+        "gap": "AzGap",
+        "nphs": "Nphases"
+      }
+    }
+  },
+  "quality": {
+    "SantoriniE": {
+      "Q0": {},
+      "Q1": {
+        "errH_max": 2.0,
+        "errZ_max": 3.0
+      },
+      "Q2": {
+        "errH_max": 1.0,
+        "errZ_max": 1.5
+      },
+      "Q3": {
+        "errH_max": 0.5,
+        "errZ_max": 1.0
+      }
+    },
+    "NLL": {
+      "Q0": {},
+      "Q1": {
+        "errH_max": 3.0,
+        "errZ_max": 5.0,
+        "gap_max": 240,
+        "nphs_min": 10,
+        "rms_max": 0.3
+      },
+      "Q2": {
+        "errH_max": 2.0,
+        "errZ_max": 3.0,
+        "gap_max": 240,
+        "nphs_min": 10,
+        "rms_max": 0.3
+      },
+      "Q3": {
+        "errH_max": 1.0,
+        "errZ_max": 2.0,
+        "gap_max": 240,
+        "nphs_min": 10,
+        "rms_max": 0.3
+      }
+    }
+  },
+  "seed": 20260822
+}

@@ -1,0 +1,15 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Recreated data and analysis outputs
+/data/santorini_e_catalog.csv
+/generated/
+
+# Operating system files
+.DS_Store
+Thumbs.db
